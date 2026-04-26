@@ -1,0 +1,16 @@
+kaggle
+jupyter
+jupyterlab
+numpy
+pandas
+matplotlib
+seaborn
+soundfile
+scikit-learn
+timm
+torch
+torchaudio
+torchvision
+huggingface_hub
+safetensors
+ipykernel

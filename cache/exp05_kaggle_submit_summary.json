@@ -1,0 +1,13 @@
+{
+  "mode": "dry_run_no_test_audio",
+  "submission_path": "/Users/jroessler/Development/kaggle/birdclef/submission.csv",
+  "shape": [
+    3,
+    235
+  ],
+  "test_files": 0,
+  "fitted_probes": 64,
+  "proxy_reduce": "max",
+  "proxy_targets": 6,
+  "prior_blend": 0.1
+}
