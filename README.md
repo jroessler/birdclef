@@ -1,8 +1,6 @@
 # BirdCLEF+ 2026 — Competition Reference
 
 **Kaggle:** https://www.kaggle.com/competitions/birdclef-2026  
-**Prize pool:** $50,000 (main) + $5,000 (working notes)  
-**Status:** Active
 
 ---
 
@@ -122,17 +120,6 @@ Remaining 234 columns = probability for each species (iNat taxon ID or ebird cod
 3. **Multi-label** — up to ~10 species can be active in a single 5-second window
 4. **Non-bird species** — models trained only on bird audio (e.g. fine-tuned BirdNET) need adaptation for amphibians, insects, and mammals
 5. **Evaluation padding** — rare species are de-risked by cmAP padding, so per-class calibration matters less than overall ranking quality
-
----
-
-## Previous Years (for transfer learning context)
-
-| Year | Location | Task |
-|------|----------|------|
-| 2026 | Pantanal, Brazil | Multi-taxa, 234 species |
-| 2025 | Middle Magdalena Valley, Colombia | Birds only |
-| 2024 | Migratory birds, Africa | Birds only |
-| 2023 | Eastern Africa | Birds only |
 
 ---
 
