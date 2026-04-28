@@ -4,18 +4,20 @@
 
 Your overall goal is to win this competition by developing a machine learning framework capable of identitfying understudied species within continuous audio data.
 
+Subgoal: Achieve a `padded cmAP` value of 0.97
+
 ## Setup
 
-1. Read the competition.md file
+1. Read the README.md file
 2. Read all the example notebooks from discussion/*. This will help you kick-start the entire experiment.
-3. Read experiments and optionally also the notebooks in notebooks to understand what you've done so far.
+3. Read experiments.md and optionally also the notebooks in notebooks/* to understand what you've done so far.
 
 Important considerations
 - All else being equal, simpler is better
 - Everything is fair game: change the architecture, the optimizer, the hyperparameters, the batch size, the model size. The only constraint is that the code runs without crashing and finishes within the time budget.
-VRAM is a soft constraint. Some increase is acceptable for meaningful gains, but it should not blow up dramatically.
+- VRAM is a soft constraint. Some increase is acceptable for meaningful gains, but it should not blow up dramatically.
 - Don't submit anything to Kaggle. Keep it local.
-- The goal is simple: get the highest `padded cmAP`.
+- The goal is simple: get the highest `padded cmAP`. For some notebooks you're also given the public `padded cmAP` aka `Published Score`, which is the ultimate score (but we only can generate it for some notebooks). That is why `padded cmAP` is our best proxy.
 
 Once you get confirmation, kick off the experimentation loop.
 
@@ -29,7 +31,7 @@ LOOP FOREVER:
 4. Run and evaluate the model. The goal is simple: get the highest `padded cmAP`.
 5. Add the results to the markdown file from step 1
 
-The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. Try to improve the metrics, that is, `padded cmAP` over time. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
+The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. Try to improve the metrics, that is, `padded cmAP` over time. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever). One subgoal is to get a padded cmAP value of 0.97.
 
 Timeout: Each experiment should take ~10 minutes total (+ a few seconds for startup and eval overhead). If a run exceeds 15 minutes, kill it and treat it as a failure (discard and revert).
 

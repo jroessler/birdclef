@@ -143,6 +143,13 @@ Local copies (source only) in `discussion/`.
 export KAGGLE_API_TOKEN=XX
 ```
 
+### Install venv (with python 3.12.13)
+```bash
+python -m .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 ### Data Download
 
 ```bash
@@ -160,6 +167,7 @@ tar -xzf data/models/perch_tf/bird-vocalization-classifier.tar.gz -C data/models
 Download ONNX model:
 
 ```bash
+mkdir data/models/perch/
 wget "https://huggingface.co/justinchuby/Perch-onnx/resolve/main/perch_v2_no_dft.onnx?download=true" -O data/models/perch/perch_v2_no_dft.onnx
 ```
 
