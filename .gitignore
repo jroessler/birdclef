@@ -49,6 +49,9 @@ htmlcov/
 # Claude
 .claude/
 
+# Python version
+.python-version
+
 # Project-specific
 discussion/
 data/

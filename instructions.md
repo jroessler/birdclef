@@ -14,7 +14,8 @@ Important considerations
 - All else being equal, simpler is better
 - Everything is fair game: change the architecture, the optimizer, the hyperparameters, the batch size, the model size. The only constraint is that the code runs without crashing and finishes within the time budget.
 VRAM is a soft constraint. Some increase is acceptable for meaningful gains, but it should not blow up dramatically.
-- Don't submit anything to Kaggle. Keep it local. 
+- Don't submit anything to Kaggle. Keep it local.
+- The goal is simple: get the highest `padded cmAP`.
 
 Once you get confirmation, kick off the experimentation loop.
 
@@ -24,13 +25,13 @@ LOOP FOREVER:
 
 1. If it doesn't exist, create a file called 'experiments.md' where you add a new row with a very short description of the upcoming experiment, the name of the notebook, as well as the results
 2. For each new experiment, create a new jupyter notebook
-3. Decide on one type of experiment - you're free in deciding on what to focus on: model choice, hyperparameter, pre or post-processing etc. Just go with the flow and improve over time
-4. Run and evaluate the model
+3. Decide on one type of experiment - you're free in deciding on what to focus on - everything is fair game (see above)
+4. Run and evaluate the model. The goal is simple: get the highest `padded cmAP`.
 5. Add the results to the markdown file from step 1
 
-The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
+The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. Try to improve the metrics, that is, `padded cmAP` over time. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
 
-Timeout: Each experiment should take ~0 minutes total (+ a few seconds for startup and eval overhead). If a run exceeds 15 minutes, kill it and treat it as a failure (discard and revert).
+Timeout: Each experiment should take ~10 minutes total (+ a few seconds for startup and eval overhead). If a run exceeds 15 minutes, kill it and treat it as a failure (discard and revert).
 
 Crashes: If a run crashes (OOM, or a bug, or etc.), use your judgment: If it's something dumb and easy to fix (e.g. a typo, a missing import), fix it and re-run. If the idea itself is fundamentally broken, just skip it, log "crash" as the status in the tsv, and move on.
 

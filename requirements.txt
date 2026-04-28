@@ -11,6 +11,7 @@ timm
 torch
 torchaudio
 torchvision
+onnxruntime
 huggingface_hub
 safetensors
 ipykernel

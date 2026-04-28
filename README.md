@@ -128,9 +128,39 @@ Remaining 234 columns = probability for each species (iNat taxon ID or ebird cod
 | Title | Votes | Link |
 |-------|-------|------|
 | pantanal-distill-birdclef2026-ONNX | 664 | https://www.kaggle.com/code/dingjiarun/pantanal-distill-birdclef2026-onnx |
-| perch_v2 starter: train + infer | 255 | https://www.kaggle.com/code/jaejohn/perch-v2-starter-train-infer |
-| Two-Pass SSM + Advanced PP | 243 | https://www.kaggle.com/code/marynaborovska/birdclef-26-two-pass-ssm-advanced-pp |
-| PyTorch Baseline [Inference] | 161 | https://www.kaggle.com/code/antoinemasq/birdclef-2026-pytorch-baseline-inference |
-| PyTorch Baseline [Training] | 133 | https://www.kaggle.com/code/antoinemasq/birdclef-2026-pytorch-baseline-training |
+| 0-932-test-mod-version-4 | 114 | https://www.kaggle.com/code/mtoshidesu/0-932-test-mod-version-4 |
+| birdclef2026-perch-v75 | 126 | https://www.kaggle.com/code/mlnjsh/birdclef2026-perch-v75 |
+| birdclef-2026-perch-v2-protossm-0-925 | 21 | https://www.kaggle.com/code/imaadmahmood/birdclef-2026-perch-v2-protossm-0-925 |
+| pantanal-distill-birdclef2026-improvement | 385 | https://www.kaggle.com/code/yusufmurtaza01/pantanal-distill-birdclef2026-improvement |
 
 Local copies (source only) in `discussion/`.
+
+---
+
+## Setup
+
+```bash
+export KAGGLE_API_TOKEN=XX
+```
+
+### Data Download
+
+```bash
+kaggle competitions download -c birdclef-2026 -p data
+cd data && unzip birdclef-2026.zip -q
+```
+
+### Model
+
+```bash
+kaggle models instances versions download google/bird-vocalization-classifier/tensorFlow2/perch_v2_cpu/1 -p data/models/perch_tf
+tar -xzf data/models/perch_tf/bird-vocalization-classifier.tar.gz -C data/models/perch_tf
+```
+
+Download ONNX model:
+
+```bash
+wget "https://huggingface.co/justinchuby/Perch-onnx/resolve/main/perch_v2_no_dft.onnx?download=true" -O data/models/perch/perch_v2_no_dft.onnx
+```
+
+Download notebooks listed above manually from Kaggle and place source copies in `discussion/`.
